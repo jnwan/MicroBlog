@@ -1,0 +1,22 @@
+<div id="posts">
+<% posts.forEach(function(post, index) { %>
+   <div class="post" style="clear: both;">
+      <h4><a href="/u/<%= post.email %>"><%= post.user %></a></h4>
+      <p>&nbsp;<%= post.post %></p>
+       <%if(post.originpost){%>
+       <%- partial('repost', {post:post.originpost}) %>
+       <%}%>
+      <p>&nbsp;<small><%= post.time %></small><a class="comment" toggle="hide" email="<%=post.email%>" time="<%=post.time%>" style="float: right;">
+              评论<%if(post.commentnum != 0){%>(<%=post.commentnum%>)<%}%></a><a class="repost"  email="<%=post.email%>" time="<%=post.time%>" num="<%=post.repostnum%>" style="float: right">
+              转发<%if(post.repostnum != 0){%>(<%=post.repostnum%>)<%}%>&nbsp;</a></p>
+   </div>
+   <div class="comment" style="clear: both; display: none;">
+      <label>发表评论</label>
+      <textarea name="comment" class="form-control" rows="1" style="text-align:justify;"></textarea>
+      <button type="submit" class="btn btn-success" email="<%=post.email%>" time="<%=post.time%>" name="comment-submit" style="float:right;"></i>评论</button>
+      <ul style="clear: both" class="list-group" name="comment-ul">
+      </ul>
+   </div>
+   <br>
+<%})%>
+</div>

@@ -1,0 +1,9 @@
+<small><div class="repost" style="padding: 0px 10px 0px 15px; border: 2px solid lightgrey;">
+    <div class="post" style="clear: both;">
+        <h4><a href="/u/<%= post.email %>"><%= post.user %></a></h4>
+        <p>&nbsp;<%= post.post %></p>
+        <p>&nbsp;<small><%= post.time %></small><a class="comment_origin" toggle="hide" email="<%=post.email%>" time="<%=post.time%>" style="float: right">
+                评论<%if(post.commentnum != 0){%>(<%=post.commentnum%>)<%}%></a><a class="repost_origin" email="<%=post.email%>" time="<%=post.time%>" style="float: right">
+                转发<%if(post.repostnum != 0){%>(<%=post.repostnum%>)<%}%>&nbsp;</a></p>
+    </div>
+</div></small>

@@ -1,0 +1,14 @@
+<% if (!user) { %>
+<div class="jumbotron">
+    <h1>Weibo</h1>
+    <p>欢迎来到Weibo</p>
+    <p>
+        <a class="btn btn-primary btn-large" href="/login">登录</a>
+        <a class="btn btn-large" href="/reg">立即注册</a>
+    </p>
+</div>
+
+<% } else { %>
+<%- partial('say') %>
+<%- partial('posts', {posts:posts}) %>
+<% } %>
