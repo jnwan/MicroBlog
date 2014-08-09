@@ -94,6 +94,9 @@ $(document).ready(function(){
     else if(url == "/login"){
         $("#login").addClass("active");
     }
+    else{
+        $("#userPage").addClass("active");
+    }
     $("div.comment").hide();
 
    var repostInfo = {};

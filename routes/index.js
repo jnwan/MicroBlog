@@ -193,7 +193,6 @@ module.exports = function(app,io){
                     return res.redirect('/');
                 }
                 res.render('user',{
-                    layout: 'layoutperson',
                     title: user.name,
                     posts: posts
                 });
